@@ -1,10 +1,21 @@
-# Smart Railway Platform Clock & Announcement Controller
+<div align="center">
+
+# 🚆 Smart Railway Platform Clock & Announcement Controller
+
+![Platform](https://img.shields.io/badge/Platform-LPC2148-blue?style=for-the-badge&logo=arm&logoColor=white)
+![Language](https://img.shields.io/badge/Language-Embedded%20C-00599C?style=for-the-badge&logo=c&logoColor=white)
+![IDE](https://img.shields.io/badge/IDE-Keil%20µVision-orange?style=for-the-badge)
+![Simulation](https://img.shields.io/badge/Simulated%20on-Proteus-1E90FF?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
 
 An embedded system built on the **NXP LPC2148 (ARM7TDMI-S)** microcontroller that automates railway platform information management — live clock display, train schedule tracking, delay indication, and automatic passenger announcements — reducing manual intervention and improving accuracy.
 
+</div>
+
 ---
 
-## 1. Project Overview / Purpose
+## 📖 1. Project Overview / Purpose
 
 ### Objective
 Railway platforms traditionally depend on manual clock-setting and manual PA announcements for train arrivals, delays, and departures. This project automates that entire workflow using a low-cost, standalone embedded controller.
@@ -23,7 +34,7 @@ The controller independently:
 
 ---
 
-## 2. Features and Functionality
+## ✨ 2. Features and Functionality
 
 | Feature | Description |
 |---|---|
@@ -32,7 +43,7 @@ The controller independently:
 | **Train Database** | Stores train number, name, platform, scheduled/updated arrival & departure time, and delay (minutes) for multiple trains. |
 | **Automatic Train Detection** | Continuously compares RTC time against each train's schedule to determine status: On-Time, Approaching, At Platform, or Departed. |
 | **Dynamic Announcement Display** | Line 1 shows the train number (fixed) with the train name scrolling; Line 2 alternates between platform/arrival/departure info and the live clock. |
-| **LED Status Indication** | Green = on-time / all clear, Yellow = at platform, Red = delayed — reflecting the currently active train's real status. |
+| **LED Status Indication** | ![Green](https://img.shields.io/badge/🟢-On--Time%20%2F%20All%20Clear-brightgreen) ![Yellow](https://img.shields.io/badge/🟡-At%20Platform-yellow) ![Red](https://img.shields.io/badge/🔴-Delayed-red) — reflecting the currently active train's real status. |
 | **Buzzer Alerts** | Three short beeps on arrival, one long beep on departure; duration is tunable. |
 | **Admin Menu (Keypad + Interrupt)** | A hardware interrupt switch opens a menu (protected, not accessible accidentally) to edit RTC time/date or any train's schedule fields individually. |
 | **Input Validation** | Every numeric field (hours 0–23, minutes/seconds 0–59, date 1–31, month 1–12, etc.) is range-checked; invalid entries are rejected and re-prompted. |
@@ -41,7 +52,7 @@ The controller independently:
 
 ---
 
-## 3. Repository / Folder Structure
+## 📁 3. Repository / Folder Structure
 
 ```
 Smart Railway Platform Clock & Announcement Controller/
@@ -78,7 +89,17 @@ Smart Railway Platform Clock & Announcement Controller/
 
 ---
 
-## 4. Block Diagram
+## 🧩 4. Block Diagram
+
+<div align="center">
+
+![Block Diagram](docs/images/block_diagram.png)
+
+</div>
+
+<details>
+<summary>📌 Mermaid version (renders directly on GitHub, click to expand)</summary>
+
 
 ```mermaid
 graph TD
@@ -95,9 +116,35 @@ graph TD
     BR --> BUZ[Buzzer]
 ```
 
+</details>
+
 ---
 
-## 5. Flow Chart — End-to-End Operation
+## 🔌 4.1 Circuit Diagram
+
+<div align="center">
+
+![Circuit Diagram](docs/images/circuit_diagram.jpeg)
+
+</div>
+
+**Key connections:**
+
+| Signal | Pin(s) |
+|---|---|
+| LCD Data (D0–D7) | P0.8 – P0.15 |
+| LCD RS / RW / EN | P0.16 / P0.17 / P0.18 |
+| Green / Yellow / Red LED | P0.2 / P0.3 / P0.4 |
+| Buzzer | P0.5 |
+| Admin Switch (EINT0) | P0.1 |
+| Keypad Rows (R0–R3) | P1.16 – P1.19 |
+| Keypad Columns (C0–C3) | P1.20 – P1.23 |
+
+> Note: simulation shown uses an LPC2124 substitute (Proteus does not include LPC2148 by default) — pinout is compatible for GPIO/LCD/keypad, but EINT0 differs (P0.16 in this simulated part vs P0.1 on real LPC2148). See [Troubleshooting](#️-9-troubleshooting-guidelines).
+
+---
+
+## 🔄 5. Flow Chart — End-to-End Operation
 
 ```mermaid
 flowchart TD
@@ -124,7 +171,7 @@ flowchart TD
 
 ---
 
-## 6. Hardware Details
+## 🔧 6. Hardware Details
 
 | Component | Purpose | Notes |
 |---|---|---|
@@ -142,7 +189,7 @@ flowchart TD
 
 ---
 
-## 7. Application Screenshots / Results
+## 📸 7. Application Screenshots / Results
 
 > _Add screenshots/photos here of:_
 > - _Boot self-test (LED/buzzer cycle)_
@@ -154,7 +201,7 @@ flowchart TD
 
 ---
 
-## 8. Testing Instructions
+## ✅ 8. Testing Instructions
 
 ### 8.1 Setup
 1. Build the project in Keil µVision with **Device = LPC2148** (verify under *Project → Options for Target → Device* — do **not** leave it on LPC2129 or another family member; memory size and peripheral behavior differ).
@@ -182,7 +229,7 @@ Proteus can be used for early logic testing with an **LPC2124** substitute (LPC2
 
 ---
 
-## 9. Troubleshooting Guidelines
+## 🛠️ 9. Troubleshooting Guidelines
 
 | Symptom | Likely Root Cause | Resolution |
 |---|---|---|
@@ -196,7 +243,7 @@ Proteus can be used for early logic testing with an **LPC2124** substitute (LPC2
 
 ---
 
-## 10. Real-Time Use Cases
+## 🌍 10. Real-Time Use Cases
 
 - **Railway platforms** (primary use case): small/unmanned stations needing automated, low-cost passenger information without a full computerized display network.
 - **Bus terminals**: same arrival/departure/delay announcement pattern applies directly.
@@ -206,7 +253,7 @@ Proteus can be used for early logic testing with an **LPC2124** substitute (LPC2
 
 ---
 
-## 11. Notes for Maintainers
+## 🧭 11. Notes for Maintainers
 
 - Each hardware driver (`kpm_v2`, `eint_sw`, `Rtc`, `indicator`, `lcd`) is intentionally kept "dumb" — it only talks to its own peripheral and exposes simple functions. All decision-making (when to show what, when to sound the buzzer) lives in `scheduler.c` / `menu.c` / `application.c`.
 - `TOTAL_TRAINS` in `train_db.h` can be increased to track more trains; no other file needs to change for that.
