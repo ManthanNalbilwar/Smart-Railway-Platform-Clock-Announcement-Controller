@@ -6,9 +6,6 @@
 ![Language](https://img.shields.io/badge/Language-Embedded%20C-00599C?style=for-the-badge&logo=c&logoColor=white)
 ![IDE](https://img.shields.io/badge/IDE-Keil%20µVision-orange?style=for-the-badge)
 ![Simulation](https://img.shields.io/badge/Simulated%20on-Proteus-1E90FF?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
-
 An embedded system built on the **NXP LPC2148 (ARM7TDMI-S)** microcontroller that automates railway platform information management — live clock display, train schedule tracking, delay indication, and automatic passenger announcements — reducing manual intervention and improving accuracy.
 
 </div>
