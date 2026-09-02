@@ -93,7 +93,7 @@ Smart Railway Platform Clock & Announcement Controller/
 
 <div align="center">
 
-![Block Diagram](docs/images/block_diagram.png)
+![Block Diagram](docs/images/BD.png)
 
 </div>
 
@@ -124,7 +124,7 @@ graph TD
 
 <div align="center">
 
-![Circuit Diagram](docs/images/circuit_diagram.jpeg)
+![Circuit Diagram](docs/images/Circuit.jpeg)
 
 </div>
 
