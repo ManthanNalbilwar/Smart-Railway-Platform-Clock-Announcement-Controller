@@ -202,15 +202,11 @@ flowchart TD
 
 ## 📸 7. Application Screenshots / Results
 
-> _Add screenshots/photos here of:_
-> - _Boot self-test (LED/buzzer cycle)_
-> - _First-time setup prompts on the LCD_
-> - _Normal clock display_
-> - _Train announcement screen (approaching / at platform)_
-> - _Admin menu screens (RTC edit, train edit)_
-> - _Proteus simulation schematic (if used for pre-hardware validation)_
+<div align="center">
 
----
+![Circuit Diagram](docs/images/Result.png)
+
+</div>
 
 ## ✅ 8. Testing Instructions
 
