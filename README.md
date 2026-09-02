@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🚆 Smart Railway Platform Clock & Announcement Controller
+#  Smart Railway Platform Clock & Announcement Controller
 
 ![Platform](https://img.shields.io/badge/Platform-LPC2148-blue?style=for-the-badge&logo=arm&logoColor=white)
 ![Language](https://img.shields.io/badge/Language-Embedded%20C-00599C?style=for-the-badge&logo=c&logoColor=white)
