@@ -146,6 +146,15 @@ graph TD
 
 ## 🔄 5. Flow Chart — End-to-End Operation
 
+<div align="center">
+
+![System Working Flowchart](docs/images/Flowchart.png)
+
+</div>
+
+<details>
+<summary>📌 Simplified Mermaid version (renders directly on GitHub, click to expand)</summary>
+
 ```mermaid
 flowchart TD
     A[Power ON] --> B{RTC first boot<br/>or battery failed?}
@@ -168,6 +177,8 @@ flowchart TD
     M --> D
     N --> D
 ```
+
+</details>
 
 ---
 
